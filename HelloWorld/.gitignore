@@ -1,0 +1,5 @@
+# java build folder
+out/
+
+# IntelliJ specific config
+.idea/
