@@ -3,7 +3,26 @@ package main.java.calcengine;
 public class Main {
 
     public static void main(String[] args) {
+//        useMathEquation();
+//        useCalculateBase();
 
+        String[] statements = {
+                "divide 100.0 50.0",
+                "add 25.0 92.0",
+                "subtract 225.0 17.0",
+                "multiply 11.0 3.0",
+        };
+
+        CalculateHelper helper = new CalculateHelper();
+        for (String statement : statements) {
+            helper.process(statement);
+            System.out.println(helper);
+        }
+
+    }
+
+
+    static void useMathEquation () {
         MathEquation[] equations = new MathEquation[4];
         equations[0] = new MathEquation(100.0d, 50.0d, 'd');
         equations[1] = new MathEquation(25.0d, 92.0d, 'a');
@@ -32,7 +51,9 @@ public class Main {
 
         equationOverload.execute((double) leftInt, rightInt);
         System.out.println("result = " + equationOverload.getResult());
+    }
 
+    private static void useCalculateBase() {
         System.out.println("\nUsing Inheritance\n");
 
         CalculateBase[] calculators = {
