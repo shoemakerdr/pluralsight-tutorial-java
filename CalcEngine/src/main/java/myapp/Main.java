@@ -9,6 +9,7 @@ import main.java.calcengine.InvalidStatementException;
 import main.java.calcengine.MathEquation;
 import main.java.calcengine.MathProcessing;
 import main.java.calcengine.Multiplier;
+import main.java.calcengine.PowerOf;
 import main.java.calcengine.Subtracter;
 
 public class Main {
@@ -20,10 +21,12 @@ public class Main {
 
         String[] statements = {
                 "add 25.0 92.0",
+                "power 5.0 2.0",        // 5.0 ^ 2.0 = 25.0
         };
 
         DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
                 new Adder(),
+                new PowerOf(),
         });
         for (String statement : statements) {
             String output = helper.process(statement);
