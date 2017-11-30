@@ -1,6 +1,6 @@
 package main.java.calcengine;
 
-public enum MathCommand {
+enum MathCommand {
     Add,
     Subtract,
     Multiply,
