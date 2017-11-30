@@ -4,8 +4,10 @@ import main.java.calcengine.Adder;
 import main.java.calcengine.CalculateBase;
 import main.java.calcengine.CalculateHelper;
 import main.java.calcengine.Divider;
+import main.java.calcengine.DynamicHelper;
 import main.java.calcengine.InvalidStatementException;
 import main.java.calcengine.MathEquation;
+import main.java.calcengine.MathProcessing;
 import main.java.calcengine.Multiplier;
 import main.java.calcengine.Subtracter;
 
@@ -14,7 +16,23 @@ public class Main {
     public static void main(String[] args) {
 //        useMathEquation();
 //        useCalculateBase();
+//        useCalculateHelper();
 
+        String[] statements = {
+                "add 25.0 92.0",
+        };
+
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+                new Adder(),
+        });
+        for (String statement : statements) {
+            String output = helper.process(statement);
+            System.out.println(output);
+        }
+
+
+    }
+    static void useCalculateHelper () {
         String[] statements = {
                 "add 1.0",                  // Error: incorrect number of values
                 "add xx 25.0",              // Error: non-numeric data
